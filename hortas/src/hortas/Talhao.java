@@ -9,7 +9,7 @@ public class Talhao {
     private List<Plantacao> plantacoes;
 
     public Talhao(int id, double area) {
-        this.id = id;
+       this.id = id;
         this.area = area;
         this.plantacoes = new ArrayList<>();
     }
