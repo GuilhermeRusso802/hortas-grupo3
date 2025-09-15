@@ -1,34 +1,22 @@
 package hortas;
 
-public class Plantacao {
-	public String dataSementeira;
-	public String tipoCultura;
+import java.time.LocalDate;
 
-	public Plantacao(String dataSementeira, String tipoCultura) {
-		this.dataSementeira = dataSementeira;
-		this.tipoCultura = tipoCultura;
-	}
-
-	public String getDataSementeira() {
-		return dataSementeira;
-	}
-
-	public void setDataSementeira(String dataSementeira) {
-		this.dataSementeira = dataSementeira;
-	}
-
-	public String getTipoCultura() {
-		return tipoCultura;
-	}
-
-	public void setTipoCultura(String tipoCultura) {
-		this.tipoCultura = tipoCultura;
-	}
-
-	@Override
-	public String toString() {
-		return "Plantacao [dataSementeira=" + dataSementeira + ", tipoCultura=" + tipoCultura + "]";
-	}
-	
-	
+class Plantacao {
+    private LocalDate dataSementeira;
+    private String tipoCultura;
+    
+    public Plantacao(LocalDate dataSementeira, String tipoCultura) {
+        this.dataSementeira = dataSementeira;
+        this.tipoCultura = tipoCultura;
+    }
+    
+    public LocalDate getDataSementeira() { return dataSementeira; }
+    public String getTipoCultura() { return tipoCultura; }
+    
+    @Override
+    public String toString() {
+        return "Plantação{" + "dataSementeira=" + dataSementeira + 
+               ", tipoCultura='" + tipoCultura + '\'' + '}';
+    }
 }
