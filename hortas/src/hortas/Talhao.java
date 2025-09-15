@@ -32,10 +32,10 @@ public class Talhao {
 
     @Override
     public String toString() {
-        return "Talhao{" +
-                "id=" + id +
-                ", area=" + area +
-                ", plantacoes=" + plantacoes.size() +
-                '}';
+       return "Talhao{" +
+               "id=" + id +
+               ", area=" + area +
+               ", plantacoes=" + plantacoes.size() +
+               '}';
     }
 }
