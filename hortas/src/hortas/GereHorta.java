@@ -1,5 +1,8 @@
 package hortas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GereHorta {
     private List<Horta> hortas;
     
@@ -7,14 +10,14 @@ public class GereHorta {
         this.hortas = new ArrayList<>();
     }
     
-    // 1. Registar hortas
+
     public void registarHorta(String nome, String localizacao) {
         Horta horta = new Horta(nome, localizacao);
         hortas.add(horta);
         System.out.println("Horta '" + nome + "' registada com sucesso!");
     }
     
-    // 2. Registar os talhões de uma horta
+
     public void registarTalhao(String nomeHorta, int numeroTalhao, double area) {
         Horta horta = encontrarHorta(nomeHorta);
         if (horta != null) {
@@ -26,7 +29,7 @@ public class GereHorta {
         }
     }
     
-    // 3. Registar as plantações de um talhão numa dada horta
+
     public void registarPlantacao(String nomeHorta, int numeroTalhao, 
                                  LocalDate dataSementeira, String tipoCultura) {
         Horta horta = encontrarHorta(nomeHorta);
@@ -44,7 +47,7 @@ public class GereHorta {
         }
     }
     
-    // 4. Imprimir os detalhes das plantações de uma dada horta
+
     public void imprimirDetalhesPlantacoes(String nomeHorta) {
         Horta horta = encontrarHorta(nomeHorta);
         if (horta != null) {
@@ -72,7 +75,7 @@ public class GereHorta {
         }
     }
     
-    // 5. Imprimir a área total de uma horta em metros quadrados
+
     public void imprimirAreaTotalHorta(String nomeHorta) {
         Horta horta = encontrarHorta(nomeHorta);
         if (horta != null) {
@@ -83,7 +86,7 @@ public class GereHorta {
         }
     }
     
-    // 6. Imprimir o nome e a área da horta com maior área
+
     public void imprimirHortaMaiorArea() {
         if (hortas.isEmpty()) {
             System.out.println("Não existem hortas registadas!");
@@ -101,7 +104,6 @@ public class GereHorta {
                          "' com " + maiorHorta.calcularAreaTotal() + "m²");
     }
     
-    // 7. Imprimir o nome das hortas que têm plantadas um dado tipo de cultura
     public void imprimirHortasComCultura(String tipoCultura) {
         System.out.println("Hortas com cultura '" + tipoCultura + "':");
         boolean encontrou = false;
@@ -115,37 +117,6 @@ public class GereHorta {
         
         if (!encontrou) {
             System.out.println("Nenhuma horta encontrada com a cultura '" + tipoCultura + "'");
-        }
-    }
-    
-    // Métodos auxiliares
-    private Horta encontrarHorta(String nomeHorta) {
-        for (Horta horta : hortas) {
-            if (horta.getNome().equalsIgnoreCase(nomeHorta)) {
-                return horta;
-            }
-        }
-        return null;
-    }
-    
-    private Talhao encontrarTalhao(Horta horta, int numeroTalhao) {
-        for (Talhao talhao : horta.getTalhoes()) {
-            if (talhao.getNumeroIdentificador() == numeroTalhao) {
-                return talhao;
-            }
-        }
-        return null;
-    }
-    
-    // Método para listar todas as hortas
-    public void listarHortas() {
-        System.out.println("\n=== LISTA DE HORTAS ===");
-        if (hortas.isEmpty()) {
-            System.out.println("Nenhuma horta registada");
-        } else {
-            for (Horta horta : hortas) {
-                System.out.println(horta);
-            }
         }
     }
 }
