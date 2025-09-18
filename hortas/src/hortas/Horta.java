@@ -37,6 +37,17 @@ public class Horta {
         }
         return total;
     }
+    
+    public boolean temCultura(String tipoCultura) {
+        for (Talhao talhao : this.talhoes) {
+            for (Plantacao plantacao : talhao.getPlantacoes()) {
+                if (plantacao.getTipoCultura().equalsIgnoreCase(tipoCultura)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     @Override
     public String toString() {

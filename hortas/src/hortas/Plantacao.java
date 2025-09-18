@@ -1,8 +1,9 @@
 package hortas;
 
+
 import java.time.LocalDate;
 
-class Plantacao {
+public class Plantacao {
     private LocalDate dataSementeira;
     private String tipoCultura;
     
@@ -18,5 +19,6 @@ class Plantacao {
     public String toString() {
         return "Plantação{" + "dataSementeira=" + dataSementeira + 
                ", tipoCultura='" + tipoCultura + '\'' + '}';
-    }
+    }	
 }
+
